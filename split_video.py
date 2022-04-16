@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from moviepy.editor import *
-import sys
+import os
 import librosa
 import time
 #import IPython.display as ipd
@@ -36,6 +36,18 @@ def viewFrame(num):
 import crepe
 from scipy.io import wavfile
 
+from pathlib import Path
+ 
+instruments={}
+rootdir = 'instruments'
+instrument_paths= [ path for path in Path(rootdir).iterdir() if path.is_dir()]
+for ip in instrument_paths:
+    instrument_videos=[video for video in ip.iterdir() if video.is_file()]
+    if len(instrument_videos)>0:
+        instruments[ip.name]=instrument_videos
+
+
+print(instruments)
 
 vName='flauta.mp4'
 
