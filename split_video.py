@@ -61,7 +61,7 @@ sr=audio.fps
 print('audio duration: ',t,', sampling rate: ',sr)
 audio.write_audiofile("audio.mp3")
 y=audio.to_soundarray(fps=sr)
-filename = librosa.util.example_audio_file()
+filename = librosa.util.example('brahms')
 
 # 2. Load the audio as a waveform `y`
 #    Store the sampling rate as `sr`
